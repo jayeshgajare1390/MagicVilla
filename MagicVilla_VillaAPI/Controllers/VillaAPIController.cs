@@ -1,19 +1,21 @@
 ﻿using MagicVilla_VillaAPI.Models;
+using MagicVilla_VillaAPI.Models.VillaDTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers
 {
-    [Route("API/VillaAPI")]
+    //[Route("API/VillaAPI")]
+    [Route("API/[Controller]")]
     [ApiController]
     public class VillaAPIController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Villa> GetVillas()
+        public IEnumerable<VillaDTO> GetVillas()
         {
-            var villas = new List<Villa>
+            var villas = new List<VillaDTO>
             {
-                new Villa { Id = 1, Name = "Ocean View Villa" },
-                new Villa { Id = 2, Name = "Mountain Retreat" }
+                new VillaDTO { Id = 1, Name = "Ocean View Villa" },
+                new VillaDTO { Id = 2, Name = "Mountain Retreat" }
             };
             return villas;
         }
